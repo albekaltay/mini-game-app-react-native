@@ -1,41 +1,44 @@
-import React  from 'react'
-import { View,Text, Pressable, StyleSheet} from 'react-native'
+import React from "react";
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import Colors from "../constants/colors";
 
-const PrimaryButton = ({children}) => {
+const PrimaryButton = ({ children, onPress }) => {
   return (
     <View style={styles.buttonOuterContainer}>
-      <Pressable  style={({pressed}) => pressed ? [styles.pressed, styles.buttonInnerContainer] : styles.buttonInnerContainer} android_ripple={{ color: "#100005"}}> 
+      <Pressable
+        style={({ pressed }) =>
+          pressed
+            ? [styles.pressed, styles.buttonInnerContainer]
+            : styles.buttonInnerContainer
+        }
+        android_ripple={{ color: Colors.primary800 }}
+        onPress={onPress}
+      >
         <Text style={styles.buttonText}> {children} </Text>
-        </Pressable>
+      </Pressable>
     </View>
-  )
-}
+  );
+};
 
-export default PrimaryButton
+export default PrimaryButton;
 
 const styles = StyleSheet.create({
-  buttonOuterContainer : {
-    margin:4,
-    overflow:'hidden',
-    borderRadius:24,
-
-
+  buttonOuterContainer: {
+    margin: 4,
+    overflow: "hidden",
+    borderRadius: 24,
   },
-  buttonInnerContainer : {
-      backgroundColor:"#28000e",
-      alignItems:'center' ,
-      paddingVertical:10
-
-      },
-  buttonText : {
+  buttonInnerContainer: {
+    backgroundColor: Colors.primary600,
+    alignItems: "center",
+    paddingVertical: 10,
+  },
+  buttonText: {
     color: "white",
-    fontWeight:'bold'
- 
-
+    fontWeight: "bold",
   },
   // For ios ripple
   pressed: {
-    opacity: 0.75
-  }
-
-})
+    opacity: 0.75,
+  },
+});
