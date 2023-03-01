@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "white",
-    fontWeight: "bold",
+    fontFamily: 'SourceCodePro-Bold',
   },
   // For ios ripple
   pressed: {

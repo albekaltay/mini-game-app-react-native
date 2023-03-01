@@ -16,12 +16,13 @@ const styles = StyleSheet.create({
 
     title: {
         fontSize: 24,
-        fontWeight:'bold',
-        color: Colors.secondary500,
+        fontFamily: 'SourceCodePro-Bold',
+        color: 'white',
         borderWidth: 2,
-        borderColor: Colors.secondary500,
+        borderColor: 'white',
         padding:5,
         textAlign:'center',
+        marginBottom:20
     },
   
 
